@@ -869,13 +869,17 @@ input:focus {
   content: ""; 
   display: inline-block; 
   width: 20px; 
-  border: 2px solid var(--color-white); 
+  border: 1px solid var(--color-white);
+  height: 1px;
+  background-color: var(--color-white);
 } 
 .burger:before { 
   content: ""; 
   display: inline-block; 
-  width: 12px; 
-  border: 2px solid var(--color-white); 
+  width: 10px; 
+  border: 1px solid var(--color-white);
+  height: 0px;
+  background-color: var(--color-white);
 } 
 
 /*MEDIA*/
@@ -1176,4 +1180,17 @@ input:focus {
   .container-price {
     gap: 20px;
 }
+}
+
+.container-label .button {
+  width: 200px;
+}
+
+@media screen and (max-width: 767px) {
+  .container-label .button {
+    width: 340px;
+  }
+  .container-label .label {
+    width: 340px;
+  }
 }
