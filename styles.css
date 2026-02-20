@@ -1194,3 +1194,14 @@ input:focus {
     width: 340px;
   }
 }
+.button {
+  cursor: pointer;
+}
+
+button, button:active {
+    border: none;
+}
+
+.container-price {
+  margin-bottom: 60px;
+}
