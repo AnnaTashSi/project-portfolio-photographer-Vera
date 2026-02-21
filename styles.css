@@ -1232,7 +1232,7 @@ button, button:active {
 
 /* Стили для показа модального окна */
 .modal-overlay.active {
-  display: flex; /* Меняем на flex для центрирования */
+  display: block; /* */
 }
 
 /* Анимация появления модального окна */

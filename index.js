@@ -5,6 +5,7 @@ window.onload = function() {
     // changeImage();
     slickSlider();
 // Modals
+  modal();
 }
 
 //Burger handler 
@@ -161,3 +162,44 @@ const changeImage = () => {
 
 
 // Modals
+const modal = () => {
+  // Получаем необходимые элементы
+  const openModalButtons = document.querySelectorAll('.button'); /*КнопкИ для открытия модального окна*/ 
+  const modalOverlay = document.querySelector('.modal-overlay'); /*Модальное окно*/ 
+  const closeModalButton = document.querySelector('.close-btn'); /*Крестик */
+  // const cancelModalButton = document.querySelector('.cancelModal'); /*Если добавить кнопку Отмена */
+
+  // Функция открытия модального окна
+  function openModal() {
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Запрещаем прокрутку страницы
+  }
+
+  // Функция закрытия модального окна
+  function closeModal() {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = ''; // Разрешаем прокрутку страницы
+  }
+
+  // Обработчики событий для кнопок
+  // на каждый button
+  openModalButtons.forEach((openModalButton) => {
+    openModalButton.addEventListener('click', openModal);
+  });    
+  closeModalButton.addEventListener('click', closeModal);
+  // cancelModalButton.addEventListener('click', closeModal);
+
+  // Закрытие модального окна при клике на оверлей
+  modalOverlay.addEventListener('click', function(event) {
+    if (event.target.classList.contains ('modal-overlay')) {
+    closeModal();
+    }
+  });
+
+  // Закрытие модального окна при нажатии Escape
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modalOverlay.classList.contains('active')) {
+    closeModal();
+    }
+  });
+}
