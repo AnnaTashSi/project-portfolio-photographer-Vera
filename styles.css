@@ -1199,9 +1199,113 @@ input:focus {
 }
 
 button, button:active {
-    border: none;
+  border: none;
 }
 
 .container-price {
   margin-bottom: 60px;
+}
+
+/* MODALS */
+.modal-overlay {
+  display: none; /* По умолчанию скрыто */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #22222299; 
+  z-index: 1000; /* z-index для отображения над другими элементами */
+  justify-items: center;
+  align-content: center;
+}
+
+.modal-window {
+  width: 500px;
+  height: 356px;
+  background-color: var(--color-white);
+  position: relative;
+  animation: modalIn 0.3s ease-out;
+  justify-items: center;
+  align-content: center;
+}
+
+/* Стили для показа модального окна */
+.modal-overlay.active {
+  display: flex; /* Меняем на flex для центрирования */
+}
+
+/* Анимация появления модального окна */
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-content {
+  justify-items: center;
+  align-content: center;
+}
+
+.modal-content h3 {
+  padding-bottom: 10px;
+}
+
+.close-btn-wrapper {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 0;
+  right: 0;
+  align-content: center;
+  cursor: pointer;
+}
+
+.close-btn {
+  transition: color 0.2s;
+  font-family: var(--font-family-notes);
+  font-size: 32px;
+  padding-left: 20px;
+}
+
+.close-btn:hover {
+  color: var(--color-red);
+}
+
+/*desctop*/
+.modal-content .button {
+  width: 380px;
+}
+
+/**/
+/*Tablet*/
+@media screen and (min-width: 768px) and (max-width: 1424px){
+  .modal-content .label {
+    width: 380px;
+  }
+}
+
+/*mobile*/
+@media screen and (max-width: 767px){
+  .modal-content .label {
+    width: 300px;
+  }
+
+  .modal-content .button {
+    width: 300px;
+  }
+
+  .modal-content h3 {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .modal-window {
+    width: 340px;
+  }
 }

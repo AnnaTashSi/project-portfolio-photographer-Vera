@@ -4,6 +4,7 @@ window.onload = function() {
 // Slider
     // changeImage();
     slickSlider();
+// Modals
 }
 
 //Burger handler 
@@ -157,3 +158,6 @@ const changeImage = () => {
   // Запуск автопрокрутки
   startAutoSlide();
 }
+
+
+// Modals
